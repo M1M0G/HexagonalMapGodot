@@ -10,7 +10,7 @@ var unit_moves : Array[Node3D]
 # Cursors
 var tile_cursor : Node3D
 var unit_cursor : Node3D
-
+var tween: Tween
 
 func _ready() -> void:
 	if not tile_cursor or tile_cursor == null:
@@ -105,7 +105,9 @@ func move_cursor(cursor : Node3D, pos : Vector3, height : float = 0):
 
 
 func animate_cursor(cursor : Node3D):
-	var tween = get_tree().create_tween()
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween().bind_node(self)
 	var initial_scale = cursor.scale
 	var target_scale = initial_scale * 1.15
 	tween.set_trans(Tween.TRANS_SPRING)

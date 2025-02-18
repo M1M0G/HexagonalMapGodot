@@ -7,6 +7,8 @@ var current_health: int = 10
 @export var movement_range: int = 3
 @export var model: PackedScene
 
+@onready var audio_player = $AudioStreamPlayer3D
+
 var occupied_tile : Tile
 var team # which "team" does this unit belong to
 
@@ -20,6 +22,7 @@ func place_unit(new_position : Vector3, tile):
 	position = new_position
 	leave_tile()
 	occupy_tile(tile)
+	audio_player.play()
 
 
 func occupy_tile(tile : Tile):

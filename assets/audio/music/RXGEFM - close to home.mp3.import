@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://esl5tcwwsp7l"
+path="res://.godot/imported/RXGEFM - close to home.mp3-4607c5ba16eb39263bfa221aafc9dceb.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/RXGEFM - close to home.mp3"
+dest_files=["res://.godot/imported/RXGEFM - close to home.mp3-4607c5ba16eb39263bfa221aafc9dceb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
