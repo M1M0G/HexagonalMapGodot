@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cimy6wmmgl37w"]
+
+[ext_resource type="PackedScene" uid="uid://by3yt58dbqjbc" path="res://scenes/UI/ui.tscn" id="1_1unbh"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_j7n2i"]
+[ext_resource type="PackedScene" uid="uid://bbqxpsy3vniy8" path="res://scenes/GameScene.tscn" id="2_2yngh"]
+[ext_resource type="AudioStream" uid="uid://cu5pwpb6gccvp" path="res://assets/audio/music/Teddy Killerz - Layer.mp3" id="4_1wb4g"]
+
+[node name="game" type="Node3D" node_paths=PackedStringArray("ui")]
+script = ExtResource("1_j7n2i")
+WorldScene = ExtResource("2_2yngh")
+ui = NodePath("UI")
+
+[node name="UI" parent="." instance=ExtResource("1_1unbh")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1wb4g")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="quit_to_menu" from="UI" to="." method="_on_ui_quit_to_menu"]
+[connection signal="start_game" from="UI" to="." method="_on_ui_start_game"]
